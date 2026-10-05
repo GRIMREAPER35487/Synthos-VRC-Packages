@@ -1,28 +1,19 @@
 {
-    "name":"Example Listing",
-    "id":"com.vrchat.example-listing",
-    "url":"https://vrchat-community.github.io/template-package-listing/index.json",
-    "author":{
-        "email":"developer@vrchat.com",
-        "name":"VRChat",
-        "url":"https://hello.vrchat.com"
+    "name": "Synthos VRC Packages",
+    "id": "com.synthos.packages",
+    "url": "https://grimreaper35487.github.io/Synthos-VRC-Packages/index.json",
+    "author": {
+        "email": "",
+        "name": "Synthos",
+        "url": "https://github.com/GRIMREAPER35487"
     },
-    "description":"Example listing of VRChat packages",
-    "infoLink":{
-        "url":"http://github.com/vrchat-community/template-package-listing",
-        "text":"View on GitHub"
+    "description": "Official VPM repository for Synthos VRChat tools and optimization packages.",
+    "infoLink": {
+        "url": "https://github.com/GRIMREAPER35487/Synthos-VRC-Packages",
+        "text": "View on GitHub"
     },
-    "bannerUrl":"banner.png",
-    "githubRepos":[
-        "vrchat-community/clientsim"
-    ],
-    "packages":[
-        {
-            "name":"com.vrchat.udonsharp",
-            "releases":[
-                "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.7/com.vrchat.UdonSharp.zip",
-                "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.6/com.vrchat.UdonSharp-1.1.6.zip"
-            ]
-        }
+    "bannerUrl": "banner.png",
+    "githubRepos": [
+        "GRIMREAPER35487/SynSceneOptimiser"
     ]
 }
