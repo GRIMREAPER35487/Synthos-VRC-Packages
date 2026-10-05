@@ -191,7 +191,11 @@
               </div>
             </fluent-data-grid-cell>
             <fluent-data-grid-cell grid-column="2" class="row align-items-center">
-              {{ if package.Type == "World"; "Worlds"; else; package.Type; end }}
+              {{~ if package.Name == "com.synthos.scene-optimizer" || package.Type == "World" ~}}
+                Worlds
+              {{~ else ~}}
+                {{ package.Type }}
+              {{~ end ~}}
             </fluent-data-grid-cell>
             <fluent-data-grid-cell grid-column="3" class="row align-items-center justify-content-end">
               <fluent-button appearance="accent" class="rowAddToVccButton" data-package-id="{{ package.Name }}">Add to VCC</fluent-button>
