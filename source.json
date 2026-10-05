@@ -15,7 +15,8 @@
     "bannerUrl": "banner.png",
     "githubRepos": [
         "GRIMREAPER35487/SynSceneOptimiser",
-        "GRIMREAPER35487/Meshia.MeshSimplification-Synthos"
+        "GRIMREAPER35487/Meshia.MeshSimplification-Synthos",
+        "GRIMREAPER35487/SynFrameDebugger"
     ]
 }
 
