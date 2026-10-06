@@ -1,8 +1,18 @@
-# VPM Package Listing Template
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GRIMREAPER35487/Synthos-VRC-Packages/main/.github/banner.png" alt="Synthos VRC Packages" width="100%" />
+</div>
 
-Starter for making your own Package Listings, including automation for building and publishing them.
+<br/>
 
-Once you're all set up, you'll be able to update the [`source.json`](source.json) file, and generate a listing which works in the VPM for delivering updates for all the listed packages.
+# Synthos VRC Packages
+
+Official VPM package repository and listing website serving all Synthos VRChat tools and optimization packages.
+
+### Repository Listing URL
+Add to VCC or ALCOM:
+```
+https://grimreaper35487.github.io/Synthos-VRC-Packages/index.json
+```
 
 ## ▶ Getting Started
 
