@@ -75,6 +75,52 @@ h1, .listingTitle {
   }
 }
 
+fluent-button[appearance="accent"],
+.rowAddToVccButton,
+#vccAddRepoButton {
+  --accent-fill-rest: #6091C2;
+  --accent-fill-hover: #7CA0C7;
+  --accent-fill-active: #9C9E98;
+  --foreground-on-accent-rest: #111418;
+  --foreground-on-accent-hover: #111418;
+  --foreground-on-accent-active: #111418;
+}
+
+fluent-button[appearance="accent"]::part(control),
+.rowAddToVccButton::part(control),
+#vccAddRepoButton::part(control) {
+  background: linear-gradient(90deg, #6091C2 0%, #7CA0C7 22%, #9C9E98 50%, #B89B77 78%, #CCA06C 100%) !important;
+  color: #111418 !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: filter 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+fluent-button[appearance="accent"]::part(content),
+.rowAddToVccButton::part(content),
+#vccAddRepoButton::part(content) {
+  color: #111418 !important;
+  font-weight: 600 !important;
+}
+
+fluent-button[appearance="accent"]:hover::part(control),
+.rowAddToVccButton:hover::part(control),
+#vccAddRepoButton:hover::part(control) {
+  background: linear-gradient(90deg, #6ba1d6 0%, #88add4 22%, #a8aab0 50%, #c4a783 78%, #d8ac76 100%) !important;
+  filter: brightness(1.08) !important;
+  box-shadow: 0 4px 12px rgba(96, 145, 194, 0.45), 0 2px 8px rgba(204, 160, 108, 0.35) !important;
+  cursor: pointer;
+}
+
+fluent-button[appearance="accent"]:active::part(control),
+.rowAddToVccButton:active::part(control),
+#vccAddRepoButton:active::part(control) {
+  filter: brightness(0.92) !important;
+  transform: translateY(1px);
+}
+
 .caption1 {
   font-size: 1rem;
   color: var(--neutral-foreground-hover);
