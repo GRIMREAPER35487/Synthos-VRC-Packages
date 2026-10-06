@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&display=swap');
+
 :root {
   color-scheme: light dark;
 }
@@ -50,8 +52,27 @@ body {
   justify-content: flex-end;
 }
 
-h1 {
+h1, .listingTitle {
+  font-family: 'Pixelify Sans', monospace, sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-top: 0.75rem;
   margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #6091C2 0%, #7CA0C7 22%, #9C9E98 50%, #B89B77 78%, #CCA06C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.75));
+}
+
+@media (max-width: 600px) {
+  h1, .listingTitle {
+    font-size: 1.85rem;
+    letter-spacing: 1px;
+  }
 }
 
 .caption1 {
