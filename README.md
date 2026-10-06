@@ -1,53 +1,47 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/GRIMREAPER35487/Synthos-VRC-Packages/main/.github/banner.png" alt="Synthos VRC Packages" width="100%" />
+
+  <br/><br/>
+
+  <a href="https://grimreaper35487.github.io/Synthos-VRC-Packages/">
+    <img src="https://raw.githubusercontent.com/GRIMREAPER35487/Synthos-VRC-Packages/main/.github/browse_vpm_repository.png" alt="Browse VPM Repository" height="46" />
+  </a>
 </div>
 
 <br/>
 
 # Synthos VRC Packages
 
-Official VPM package repository and listing website serving all Synthos VRChat tools and optimization packages.
+Official VPM (VRChat Package Manager) listing for Synthos tools, optimization suites, and editor extensions.
 
-### Repository Listing URL
-Add to VCC or ALCOM:
-```
-https://grimreaper35487.github.io/Synthos-VRC-Packages/index.json
-```
+Add this repository to your VRChat Creator Companion (VCC) or ALCOM to install and receive automatic updates for all Synthos packages.
 
-## ▶ Getting Started
+---
 
-* Press [![Use This Template](https://user-images.githubusercontent.com/737888/185467681-e5fdb099-d99f-454b-8d9e-0760e5a6e588.png)](https://github.com/vrchat-community/template-package-listing/generate)
-to start a new GitHub project based on this template, and follow the directions there. 
-  * Choose a fitting repository name and description.
-  * Set the visibility to 'Public'. You can also choose 'Private' and change it later.
-  * You don't need to select 'Include all branches.'
-* Edit this project on GitHub in your web browser, or clone it repository locally using Git.
-  * If you're unfamiliar with Git and GitHub, [visit GitHub's documentation](https://docs.github.com/en/get-started/quickstart/).
-  
-## Setting up the Automation
+### Quick Install
 
-You'll need to edit some of the files in this template, starting with [`source.json`](source.json):
-- Fill out general information about your listing, such as the [`name`](source.json#L2), [`id`](source.json#L3), [`author`](source.json#L5), [`description`](source.json#L10), etc.
-- Make sure to update the ["url"](source.json#L4) field on line 4, replacing "vrchat-community" with your GitHub username, and "template-package-listing" with your repo name. This is the link that will be used to download your listing once it's published by GitHub. For example, the user "thupper" who made a repo called "thupper-listing" would update the url to "https://thupper.github.io/thupper-listing/index.json".
-- Update the "url" within ["infoLink"](source.json#L11) (on line 11) with the url of this new repo you've created.
-- If you'd like to include packages hosted on GitHub, specify them in [`githubRepos`](source.json#L16).
-- If you'd like to include packages hosted elsewhere as a `.zip` file, specify them in [`packages`](source.json#L19).
-  - You can safely remove either [`githubRepos`](source.json#L16) or [`packages`](source.json#L19) if you're not using them. 
-- Finally, go to the "Settings" page for your repo, then choose "Pages", and look for the heading "Build and deployment". Change the "Source" dropdown from "Deploy from a branch" to "GitHub Actions".
+- **One-Click Add (VCC / ALCOM):**  
+  [Add to VCC](vcc://vpm/addRepo?url=https%3A%2F%2Fgrimreaper35487.github.io%2FSynthos-VRC-Packages%2Findex.json)
 
-## 📃 Rebuilding the Listing
+- **Listing URL (Manual Add):**  
+  ```text
+  https://grimreaper35487.github.io/Synthos-VRC-Packages/index.json
+  ```
 
-Whenever you make a change to the `main` branch, or when you trigger it manually, the 'Build Repo Listing' action will make a new index of all the releases available and publish them as a website hosted fore free on GitHub Pages. This listing can be used by the VPM to keep your package up to date, and the generated index page can serve as a simple landing page with info for your package. The URL for your package will be in the format https://username.github.io/repo-name.
+---
 
-## 🏠 Customizing the Landing Page
+### Included Packages
 
-The contents of the `Website` directory can be customized to change the appearance of the landing page. Most of the information will be automatically filled in with information from [`source.json`](source.json). Customizing the landing page by hand is not required.
+| Package | Identifier | Description |
+| :--- | :--- | :--- |
+| [**Synthos Batch Uploader**](https://github.com/GRIMREAPER35487/VRC-Batch-Uploader) | `com.synthos.batch-uploader` | Unattended multi-avatar batch uploader with multi-platform synchronization (PC / Android / iOS), blendshapes, and material overrides. |
+| [**Synthos Scene Optimizer**](https://github.com/GRIMREAPER35487/SynSceneOptimiser) | `com.synthos.scene-optimizer` | Non-destructive world and scene performance suite featuring texture VRAM downscaling, mesh simplification, GPU instancing, audio, and particle audits. |
+| [**Synthos Frame Debugger Exporter**](https://github.com/GRIMREAPER35487/SynFrameDebugger) | `com.synthos.frame-debugger` | Inspects and exports Unity Frame Debugger event streams, draw calls, shader properties, and batch break causes to structured JSON. |
+| [**Meshia Mesh Simplification**](https://github.com/GRIMREAPER35487/Meshia.MeshSimplification-Synthos) | `com.synthos.meshia` | Burst-accelerated mesh decimation library decoupled from NDMF with independent UV barycentric preservation and native VRCFury support. |
+| [**Avatar Compressor**](https://github.com/GRIMREAPER35487/avatar-compressor-Synthos) | `com.synthos.avatar-compressor` | High-performance avatar texture optimization utility decoupled from NDMF with native VRCFury hooks and non-destructive runtime baking. |
 
-## Technical Stuff
+---
 
-You are welcome to make your own changes to the automation process to make it fit your needs, and you can create Pull Requests if you have some changes you think we should adopt. Here's some more info on the included automation:
+### Automated Deployment
 
-### Build Listing
-[build-listing.yml](.github/workflows/build-listing.yml)
-
-This is a composite action which builds a vpm-compatible [Repo Listing](https://vcc.docs.vrchat.com/vpm/repos) based on the items you've added to your [`source.json`](source.json) file. you've created. In order to find all your releases and combine them into a listing, it checks out [another repository](https://github.com/vrchat-community/package-list-action) which has a [Nuke](https://nuke.build/) project which includes the VPM core lib to have access to its types and methods. This project will be expanded to include more functionality in the future - for now, the action just calls its `BuildRepoListing` target, which calls `RebuildHomePage` when it completes. If you wanted to make an action that just rebuilds the home page, you could call that directly instead - just copy the existing call and replace the target names.
+Package releases from the individual repositories automatically trigger the `Build Repo Listing` GitHub Actions workflow in this repository. The action compiles the latest releases, generates `index.json`, and publishes the live catalog to GitHub Pages.
