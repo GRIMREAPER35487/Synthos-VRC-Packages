@@ -196,7 +196,7 @@
             <fluent-data-grid-cell grid-column="2" class="row align-items-center">
               {{~ if package.Name == "com.synthos.scene-optimizer" || package.Type == "World" ~}}
                 Worlds
-              {{~ else if package.Name == "com.synthos.batch-uploader" || package.Type == "Avatar" || package.Type == "avatar" ~}}
+              {{~ else if package.Name == "com.synthos.batch-uploader" || package.Name == "com.synthos.avatar-compressor" || package.Type == "Avatar" || package.Type == "avatar" ~}}
                 Avatars
               {{~ else ~}}
                 {{ package.Type }}
