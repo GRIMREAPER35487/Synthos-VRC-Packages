@@ -48,9 +48,20 @@ jobs:
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
           
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      # ci/build.cmd builds net6.0 and net8.0 in parallel into the same bin folder, which races on
+      # PackageBuilder.runtimeconfig.json with the .NET 10 SDK, so build and run net8.0 only.
       - name: Build Package Version Listing
-        run: ${{env.pathToCi}}/build.cmd BuildMultiPackageListing --root ${{env.pathToCi}} --list-publish-directory $GITHUB_WORKSPACE/${{env.listPublishDirectory}}
+        run: |
+          dotnet build ${{env.pathToCi}}/PackageBuilder/PackageBuilder.csproj -f net8.0 /nodeReuse:false /p:UseSharedCompilation=false -nologo --verbosity quiet
+          dotnet run --project ${{env.pathToCi}}/PackageBuilder/PackageBuilder.csproj --no-build -f net8.0 -- BuildMultiPackageListing --root ${{env.pathToCi}} --list-publish-directory $GITHUB_WORKSPACE/${{env.listPublishDirectory}}
         env:
+          DOTNET_CLI_TELEMETRY_OPTOUT: 1
+          DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  
       - name: Setup Pages
